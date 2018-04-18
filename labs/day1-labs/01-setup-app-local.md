@@ -8,8 +8,11 @@ There are two environments you will be working in for the exercises today.
 
 Install the following items:
 Node JS - https://nodejs.org/en/download/
+
 Azure CLI - https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
+
 MongoDB - https://www.mongodb.com/download-center#community
+
 Docker CE - https://store.docker.com/editions/community/docker-ce-desktop-windows
 
 2. **Azure Cloud Shell:** The Azure Cloud Shell will be accessed by logging into the Azure Portal (http://portal.azure.com).
