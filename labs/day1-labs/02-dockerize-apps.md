@@ -105,13 +105,12 @@ docker network create --subnet=172.18.0.0/16 my-network
     You will have a prompt inside the mongo container. From that prompt, run the import script (`./import.sh`)
 
     ```
-    root@61f9894538d0:/# ./import.sh
-    2018-01-10T19:26:07.746+0000	connected to: localhost
-    2018-01-10T19:26:07.761+0000	imported 4 documents
-    2018-01-10T19:26:07.776+0000	connected to: localhost
-    2018-01-10T19:26:07.787+0000	imported 72 documents
-    2018-01-10T19:26:07.746+0000	connected to: localhost
-    2018-01-10T19:26:07.761+0000	imported 2 documents
+    mongoimport --host localhost --db webratings --collection heroes --type json --file ./heroes.json --jsonArray
+
+    mongoimport --host localhost --db webratings --collection ratings --type json --file ./ratings.json --jsonArray
+
+    mongoimport --host localhost --db webratings --collection sites --type json --file ./sites.json --jsonArray
+
     ```
 
 4. Type `exit` to exit out of container
@@ -154,7 +153,7 @@ Now that we have container images for our application components, we need to sto
 
 ### Create Azure Container Registry instance
 
-1. In the browser, sign in to the Azure portal at https://portal.azure.com. Your Azure login ID will look something like `odl_user_9294@gbbossteamoutlook.onmicrosoft.com`
+1. In the browser, sign in to the Azure portal at https://portal.azure.com with your account associated with your Azure subscription. 
 2. Click "Create a resource" and select "Azure Container Registry"
 3. Provide a name for your registry (this must be unique)
 4. Use the existing Resource Group
@@ -168,13 +167,16 @@ Now that we have container images for our application components, we need to sto
 1. Browse to your Container Registry in the Azure Portal
 2. Click on "Access keys"
 3. Make note of the "Login server", "Username", and "password"
-4. In the terminal session on the jumpbox, set each value to a variable as shown below
+4. In the Powershell windowon your local machine, set each value to a variable as shown below
 
     ```
     # set these values to yours
-    ACR_SERVER=
-    ACR_USER=
-    ACR_PWD=
+
+    $ACR_SERVER="keithacr.azurecr.io"
+    
+    $ACR_USER="keithacr"
+    
+    $ACR_PWD="oN9molsZVuur9r/3XDEXNkKlJXF8hmMg"
 
     docker login --username $ACR_USER --password $ACR_PWD $ACR_SERVER
     ```
