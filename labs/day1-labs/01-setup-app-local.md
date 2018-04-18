@@ -7,6 +7,7 @@ There are two environments you will be working in for the exercises today.
 1. **Local workstation:** The apps and containers must be run on a Linux machine. 
 
 Install the following items:
+
 Node JS - https://nodejs.org/en/download/
 
 Azure CLI - https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
@@ -36,7 +37,7 @@ Once you have accessed the jumpbox, you must clone the workshop repo to the mach
 
 The underlying data store for the app is [MongoDB](https://www.mongodb.com/ "MongoDB Homepage"). It is already running. We need to import the data for our application.
 
-1. Import the data using a terminal session on the jumpbox
+1. Import the data using a Powershell window on your local machine. 
 
     ```bash
     cd ~/blackbelt-aks-hackfest/app/db
@@ -50,7 +51,7 @@ The underlying data store for the app is [MongoDB](https://www.mongodb.com/ "Mon
 
 The API for the app is written in javascript, running on [Node.js](https://nodejs.org/en/ "Node.js Homepage") and [Express](http://expressjs.com/ "Express Homepage")
 
-1. Update dependencies and run app via node in a terminal session on the jumpbox
+1. Update dependencies and run app via node in a Powershell window on your local machine. 
 
     ```bash
     cd ~/blackbelt-aks-hackfest/app/api
@@ -67,7 +68,7 @@ Browse to <http://localhost:3000/api/heroes>
 
 The web frontend for the app is written in [Vue.js](https://vuejs.org/Vue "Vue.js Homepage"), running on [Node.js](https://nodejs.org/en/ "Node.js Homepage") with [Webpack](https://webpack.js.org/ "Webpack Homepage")
 
-1. Open a new terminal session on the jumpbox
+1. Open a new Powershell window on your local machine.
 2. Update dependencies and run app via node
 
     ```bash
@@ -83,4 +84,4 @@ The web frontend for the app is written in [Vue.js](https://vuejs.org/Vue "Vue.j
 
 ## Clean-up
 
-Close the web and api apps in the terminal windows by hitting `ctrl-c` in each of the corresponding terminal windows
+Close the web and api apps in the Powershell windows by hitting `ctrl-c` in each of the corresponding Powershell windows
