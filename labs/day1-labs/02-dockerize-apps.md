@@ -102,7 +102,7 @@ docker network create --subnet=172.18.0.0/16 my-network
     docker exec -it db bash
     ```
 
-    You will have a prompt inside the mongo container. From that prompt, run the import script (`./import.sh`)
+    You will have a prompt inside the mongo container. From that prompt, run the import scripts
 
     ```
     mongoimport --host localhost --db webratings --collection heroes --type json --file ./heroes.json --jsonArray
