@@ -8,10 +8,9 @@ For the first container, we will be creating a Dockerfile from scratch. For the 
 
 1. Create a Dockerfile
 
-    * Access the jumpbox
+    * On your local machine:
     * In the `~/blackbelt-aks-hackfest/app/web` directory, add a file called "Dockerfile"
-        * If you in in a SSH session, use vi as the editor
-        * In RDP, you can use Visual Studio Code
+        * You can use Visual Studio Code
 
     * Add the following lines and save:
 
@@ -39,12 +38,13 @@ For the first container, we will be creating a Dockerfile from scratch. For the 
 
 2. Create a container image for the node.js Web app
 
-    From the terminal session: 
+    From the Powershell window: 
 
     ```
     cd ~/blackbelt-aks-hackfest/app/web
     
-    docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` --build-arg VCS_REF=`git rev-parse --short HEAD` --build-arg IMAGE_TAG_REF=v1 -t rating-web .
+    docker build --build-arg BUILD_DATE="date -u +'%Y-%m-%dT%H:%M:%SZ'" --build-arg VCS_REF="git rev-parse --short HEAD" --build-arg IMAGE_TAG_REF=v1 -t rating-web .
+
     ```
 
 3. Validate image was created with `docker images`
@@ -145,12 +145,8 @@ docker network create --subnet=172.18.0.0/16 my-network
 
 3. Test web app
     
-    The jumpbox has a Public IP address and port 8080 is open. You can browse your running app with a link such as: http://13.90.246.114:8080 
-
-    You can also test via curl
-    ```
-    curl http://localhost:8080
-    ```
+    Browse to http://localhost:8080
+    
 
 ## Azure Container Registry (ACR)
 
