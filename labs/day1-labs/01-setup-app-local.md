@@ -1,16 +1,20 @@
-# Initial Setup and Running App on Local Machine
+# Initial Setup and Running App on Local Machine (Windows edition)
 
 ## Work Environment
 
 There are two environments you will be working in for the exercises today.
 
-1. **Jumpbox:** The apps and containers must be run on a Linux machine. A CentOS linux machine has been created for you in your Azure subscription.
+1. **Local workstation:** The apps and containers must be run on a Linux machine. 
 
-    > Note: If you have bash or ssh available on your machine, it is easiest to access the jump box via SSH. Otherwise, RDP is required.
+Install the following items:
+Node JS - https://nodejs.org/en/download/
+Azure CLI - https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
+MongoDB - https://www.mongodb.com/download-center#community
+Docker CE - https://store.docker.com/editions/community/docker-ce-desktop-windows
 
 2. **Azure Cloud Shell:** The Azure Cloud Shell will be accessed by logging into the Azure Portal (http://portal.azure.com).
 
-Labs 1 and 2 require the Jumpbox. The subsequent labs all use the Azure Cloud Shell.
+Labs 1 and 2 will be completed on your local machine. The subsequent labs all use the Azure Cloud Shell.
 
 ## Clone Lab Github Repo
 
