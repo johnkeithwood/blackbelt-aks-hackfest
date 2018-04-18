@@ -20,7 +20,7 @@ Once you have accessed the jumpbox, you must clone the workshop repo to the mach
 2. Clone the Github repo via the command line
 
     ```
-    git clone https://github.com/Azure/blackbelt-aks-hackfest.git
+    git clone https://github.com/johnkeithwood/blackbelt-aks-hackfest.git
     ```
 
 ## Get Applications up and running
@@ -34,7 +34,9 @@ The underlying data store for the app is [MongoDB](https://www.mongodb.com/ "Mon
     ```bash
     cd ~/blackbelt-aks-hackfest/app/db
 
-    mongoimport --host localhost:27019 --db webratings --collection heroes --file ./heroes.json --jsonArray && mongoimport --host localhost:27019 --db webratings --collection ratings --file ./ratings.json --jsonArray && mongoimport --host localhost:27019 --db webratings --collection sites --file ./sites.json --jsonArray
+    mongoimport --host localhost:27017 --db webratings --collection heroes --file ./heroes.json --jsonArray
+    mongoimport --host localhost:27017 --db webratings --collection ratings --file ./ratings.json --jsonArray
+    mongoimport --host localhost:27017 --db webratings --collection sites --file ./sites.json --jsonArray
     ```
 
 ### API Application layer - Node.js
@@ -46,16 +48,13 @@ The API for the app is written in javascript, running on [Node.js](https://nodej
     ```bash
     cd ~/blackbelt-aks-hackfest/app/api
 
-    npm install && npm run localmachine
+    npm install
+    npm run localmachine
     ```
 
 2. Open a new terminal session on the jumpbox and test the API
 
-    use curl
-    ```bash
-    curl http://localhost:3000/api/heroes
-    ```
-    If you are in an RDP session, you can browse to <http://localhost:3000/api/heroes>
+Browse to <http://localhost:3000/api/heroes>
 
 ### Web Application layer - Vue.js, Node.js
 
@@ -67,16 +66,13 @@ The web frontend for the app is written in [Vue.js](https://vuejs.org/Vue "Vue.j
     ```bash
     cd ~/blackbelt-aks-hackfest/app/web
 
-    npm install && npm run localmachine
+    npm install
+    npm run localmachine
     ```
 3. Test the web front-end
 
-    The jumpbox has an external DNS name and port 8080 is open. You can browse your running app with a link such as: http://jump-vm-csc4f653357f-q72zm5c4ggcza.eastus.cloudapp.azure.com:8080 
-
-    You can also test from a new terminal session in the jumpbox
-    ```bash
-    curl http://localhost:8080
-    ```
+    Browse to <http://localhost:8080>
+    
 
 ## Clean-up
 
