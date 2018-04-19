@@ -46,9 +46,9 @@ There are a few ways that AKS clusters can access your private Azure Container R
 
 ```
 # set these values to yours
-ACR_SERVER=keithacr.azurecr.io
-ACR_USER=KeithACR
-ACR_PWD=dvntjQYCM80OXclreLwRumB5LMc+qlb8
+ACR_SERVER=
+ACR_USER=
+ACR_PWD=
 
 kubectl create secret docker-registry acr-secret --docker-server=$ACR_SERVER --docker-username=$ACR_USER --docker-password=$ACR_PWD --docker-email=superman@heroes.com
 ```
