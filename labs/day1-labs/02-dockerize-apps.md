@@ -172,11 +172,11 @@ Now that we have container images for our application components, we need to sto
     ```
     # set these values to yours
 
-    $ACR_SERVER="keithacr.azurecr.io"
+    $ACR_SERVER=""
     
-    $ACR_USER="keithacr"
+    $ACR_USER=""
     
-    $ACR_PWD="oN9molsZVuur9r/3XDEXNkKlJXF8hmMg"
+    $ACR_PWD=""
 
     docker login --username $ACR_USER --password $ACR_PWD $ACR_SERVER
     ```
