@@ -16,7 +16,7 @@
         ```
         spec:
         containers:
-        - image: mycontainerregistry.azurecr.io/azureworkshop/rating-db:v1
+        - image: keithacr.azurecr.io/azureworkshop/rating-db:v1
             name:  heroes-db-cntnr
         ```
 
@@ -36,7 +36,7 @@
         ```
         spec:
         containers:
-        - image: mycontainerregistry.azurecr.io/azureworkshop/rating-web:v1
+        - image: keithacr.azurecr.io/azureworkshop/rating-web:v1
             name:  heroes-web-cntnr
         ```
 
